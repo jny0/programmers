@@ -18,4 +18,8 @@ class Solution {
 
         return answer;
     }
+
+    public int solution_stream(String myString) {
+        return myString.chars().mapToObj(i -> (char) i).filter(Character::isDigit).map(String::valueOf).mapToInt(Integer::valueOf).sum();
+    }
 }
