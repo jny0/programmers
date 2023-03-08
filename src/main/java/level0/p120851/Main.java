@@ -15,11 +15,15 @@ class Solution {
         for(char ch : str.toCharArray()) {
             answer += Character.getNumericValue(ch);
         }
-
         return answer;
     }
 
     public int solution_stream(String myString) {
-        return myString.chars().mapToObj(i -> (char) i).filter(Character::isDigit).map(String::valueOf).mapToInt(Integer::valueOf).sum();
+        return myString.chars()
+                .mapToObj(i -> (char) i)
+                .filter(Character::isDigit)
+                .map(String::valueOf)
+                .mapToInt(Integer::valueOf)
+                .sum();
     }
 }
